@@ -32,16 +32,22 @@ function playRound(humanAnswer, computerAnswer) {
     let result = "";
     if (humanAnswer == "rock" && computerAnswer == "paper") {
         result = "Paper beats Rock, Computer Wins!!";
+        computerScore++;
     } else if (humanAnswer == "rock" && computerAnswer == "scissors") {
         result = 'You WIN!!';
+        humanScore++;
     } else if (humanAnswer == "paper" && computerAnswer == "scissors") {
         result = 'Computer WINS!!';
+        computerScore++;
     } else if (humanAnswer == "paper" && computerAnswer == "rock") {
-        result = 'you WINS!!';
+        result = 'You WIN!!';
+        humanScore++;
     } else if (humanAnswer == "scissors" && computerAnswer == "rock") {
         result = 'Computer WINS!!';
+        computerScore++;
     } else if (humanAnswer == "scissors" && computerAnswer == "paper") {
-        result = 'You WINS!!';
+        result = 'You WIN!!';
+        humanScore++;
     } else if (humanAnswer == "rock" && computerAnswer == "rock") {
         result = 'Its a tie';
     } else if (humanAnswer == "paper" && computerAnswer == "paper") {
@@ -50,4 +56,6 @@ function playRound(humanAnswer, computerAnswer) {
         result = 'Its a tie';
     }
     document.getElementById("answer").innerHTML = result;
+    document.getElementById("humanScore").innerHTML = "Human Score: " + humanScore;
+    document.getElementById("computerScore").innerHTML = "Computer Score: " + computerScore;
 }
